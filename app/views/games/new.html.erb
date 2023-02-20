@@ -1,0 +1,32 @@
+<h1>********* Welcome to the longest word-game! *********</h1>
+
+<h2>Here is your grid:</h2>
+
+<%= @letters %>
+
+<div>
+  <form action="/score" method="post" data-turbo="false" class="d-flex">
+  <div class="col-4">
+    <input type="text" name="word" placeholder="Type your word here" class="form-control">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+  </div>
+    <input type="submit" value="Ask!" class="btn btn-primary mb-3">
+  </form>
+</div>
+
+<%#
+
+Q F M R K L I T P
+
+h2
+*****************************************************
+What is your longest word?
+
+lift
+
+******** Now your results ********
+Your word: lift
+Time Taken to answer: 12.07916
+Your score: 3.194722666666667
+Message: Well Done! %>
